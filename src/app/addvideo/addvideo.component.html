@@ -1,0 +1,31 @@
+<h2>Ajouter une vidéo</h2>
+
+
+
+<form (submit)="onSubmit()">
+  <label>
+    ID :
+    <input type="text" name="id" [(ngModel)]="video.id" required>
+  </label>
+ 
+  <label>
+    TITLE :
+    <input type="text" name="titre" [(ngModel)]="video.titre" required pattern="[A-Z][a-zA-Z]*">
+
+  </label>
+
+ 
+
+  <label>
+    genre :
+    <input type="text" name="genre" [(ngModel)]="video.genre" required (blur)="verifierGenre()">
+    <div *ngIf="genreInvalide">Le genre doit être action, documentaire ou comédie.</div>  </label> <label>
+    public :
+    <input type="text" name="public" [(ngModel)]="video.public">
+  </label>
+  <label>
+    nbrShared :
+    <input type="number" name="nbrShared" [(ngModel)]="video.nbrShared">
+  </label>
+  <button type="submit">Ajouter</button>
+</form>
