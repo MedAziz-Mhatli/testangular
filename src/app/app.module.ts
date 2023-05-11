@@ -1,22 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { ListVideoComponent } from './list-video/list-video.component';
+import { AddVideoComponent } from './add-video/add-video.component';
+import { ModifierVideoComponent } from './modifier-video/modifier-video.component';
+import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AddvideoComponent } from './addvideo/addvideo.component';
-import { ChercherVideosComponentComponent } from './chercher-videos-component/chercher-videos-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    AddvideoComponent,
-    ChercherVideosComponentComponent
+    ListVideoComponent,
+    AddVideoComponent,
+    ModifierVideoComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     AppRoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

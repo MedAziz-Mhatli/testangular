@@ -1,0 +1,36 @@
+<form #form="ngForm">
+    <div class="form-group">
+        <label for="exampleInputEmail1">id</label>
+        <input type="number" class="form-control" name="id" [(ngModel)]="video.id" #id="ngModel"  placeholder="id" value={{video.id}} required> 
+        <small   class=""  id="emailHelp" class="form-text text-muted" *ngIf="id.invalid" > ID is required</small>
+
+      </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">title</label>
+      <input type="text" class="form-control" name="title"  [(ngModel)]="video.title"   placeholder="title"  minlength="3" value={{video.title}}  #title="ngModel" required>
+      <small   class=""  id="emailHelp" class="form-text text-muted" *ngIf="title.errors?.['required'] && title.touched" > title is required</small>
+      <small   class=""  id="emailHelp" class="form-text text-muted" *ngIf="title.errors?.['minlength'] " > title min lenght is 3</small>
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">genre</label>
+        <input type="text" class="form-control" name="genre"  [(ngModel)]="video.genre"   placeholder="genre"  minlength="3" value={{video.genre}}  #genre="ngModel" required>
+        <small   class=""  id="emailHelp" class="form-text text-muted" *ngIf="genre.errors?.['required'] && genre.touched" > genre is required</small>
+        <small   class=""  id="emailHelp" class="form-text text-muted" *ngIf="genre.errors?.['minlength'] " > genre min lenght is 3</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">public</label>
+        <input type="text" class="form-control" name="public"  [(ngModel)]="video.public"   placeholder="public"  minlength="3" value={{video.public}}  #public="ngModel" required>
+        <small   class=""  id="emailHelp" class="form-text text-muted" *ngIf="public.errors?.['required'] && public.touched" > public is required</small>
+        <small   class=""  id="emailHelp" class="form-text text-muted" *ngIf="public.errors?.['minlength'] " > public min lenght is 3</small>
+      </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">nbrShared</label>
+        <input type="number" class="form-control" name="nbrshared" [(ngModel)]="video.nbrShared" placeholder="nbrShared" value={{video.nbrShared}} #nbrShared="ngModel"  required> 
+        <small   class=""  id="emailHelp" class="form-text text-muted" *ngIf="nbrShared.invalid" > nbrShared is required</small>
+      </div>
+
+    <br>
+    <button type="submit" [disabled]="form.invalid" class="btn btn-primary" (click)="updateVideo()">Submit</button>
+  </form>

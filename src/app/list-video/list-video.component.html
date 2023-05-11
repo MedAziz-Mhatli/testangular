@@ -1,0 +1,22 @@
+<div class="row"> 
+  
+    <div class="col-md-3" *ngFor="let video of listVideo; let i =index">
+            <div class="card" style="width: 18rem;" >
+                <img class="card-img-top" src="https://www.lascom.com/wp-content/uploads/2021/03/Bland_Cosmetic_Product_Packaging_Unit_500x400.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Video : {{video.id}}</h5>
+                  <p class="card-text"> title : {{video.title}}</p>
+                  <p class="card-text"> genre : {{video.genre}}</p>
+                  <p class="card-text"> public : {{video.public}}</p>
+                  <p class="card-text"> nbrShared  : {{video.nbrShared}}</p>
+                  <div class="row"> 
+                    <div class="col"><button class="btn btn-primary" (click)="update(video)" [disabled]="video.nbrShared!==0">update</button></div>
+                    <div class="col"><button class="btn btn-primary" (click)="delete(video.id)">delete</button></div>
+                  </div>
+
+                </div>
+              </div>
+        </div>
+        
+    </div>
+
